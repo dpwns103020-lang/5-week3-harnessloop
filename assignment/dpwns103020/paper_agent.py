@@ -1224,21 +1224,14 @@ def run_verified_agent(
 
 if __name__ == "__main__":
 
-    task = (
-        "HZO와 ZrO2 기반 MIM capacitor에서 "
-        "leakage current를 줄이는 데 도움이 되는 논문을 찾아줘. "
-        "관련성이 높은 논문을 최소 3편 조사하고, "
-        "각 논문의 핵심 내용과 내 연구 주제와의 관련성을 설명해줘."
-    )
+    task = input("연구 주제를 입력하세요: ").strip()
 
-    print(
-        "[USER TASK]"
-    )
+    if not task:
+        print("연구 주제가 입력되지 않았습니다.")
 
-    print(
-        task
-    )
+    else:
+        print()
+        print("[USER TASK]")
+        print(task)
 
-    run_verified_agent(
-        task
-    )
+        run_verified_agent(task)
